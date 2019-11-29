@@ -9,6 +9,7 @@
     overflow-y: scroll;
 } */
 
+/*#region header navigation*/
 header.navbar {
     position: fixed;
     width: 100vw;
@@ -70,7 +71,6 @@ header div.header-content {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-
 }
 
 .hamburger-inner::before,
@@ -92,42 +92,40 @@ header div.header-content {
     top: 7px;
 }
 
+/*#endregion*/
 
-
-
+/*#region banner */
 section.banner {
     min-height: 750px;
     background-image: url(images/banner.jpg);
 }
 
-div.welcome {
-    position: absolute;
-    width: 80%;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, 0);
+.banner div.welcome {
+    width: 85%;
+    padding-top: 45%;
+    margin: 0 auto;
     text-align: center;
     color: white;
-
 }
 
-div.welcome h1 {
+.banner div.welcome h1 {
+
     text-transform: uppercase;
     font-family: sans-serif;
     font-size: 2rem;
     margin-bottom: 15px;
 }
 
-div.welcome p {
+.banner div.welcome p {
     font-family: "Open Sans", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 1.5;
     letter-spacing: 1px;
+    margin-bottom: 100px;
 }
 
-div.welcome button {
-    margin-top: 90px;
+.banner div.welcome button {
     height: 45px;
     width: 180px;
     background-color: #e84545;
@@ -139,6 +137,43 @@ div.welcome button {
     cursor: pointer;
 }
 
+/* #endregion */
+
+/* #region features section */
+section.features {
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section.features .feature {
+    flex-basis: 80%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+section.features .feature i {
+    color: #e84545;
+    font-size: 3.5rem;
+}
+
+section.features .feature h5 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 20px 0 10px 0;
+}
+
+section.features .feature p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* #endregion */
 
 /* .member span {
     display: inline-block;
