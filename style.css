@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-/* html {
-    overflow-x: hidden;
-    overflow-y: scroll;
-} */
-
 /*#region header navigation*/
 header.navbar {
     position: fixed;
@@ -174,6 +169,23 @@ section.features .feature p {
 }
 
 /* #endregion */
+
+/* #region projects */
+section.projects {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    line-height: 0;
+    justify-content: center;
+}
+
+
+
+
+
+/* #endregion */
+
+
 
 /* .member span {
     display: inline-block;
