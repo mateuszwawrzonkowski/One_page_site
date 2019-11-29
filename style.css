@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+} */
+
+header.navbar {
+    position: fixed;
+    width: 100vw;
+    background-color: transparent;
+}
+
+header.active {
+    background-color: #2b2c49;
+}
+
+header div.active {
+    padding: 20px 0 20px 0;
+}
+
+header div.header-content {
+    position: relative;
+    width: 85vw;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.6);
+    padding: 40px 0 40px 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hamburger {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+.hamburger::before {
+    content: '';
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    transform: translate(-12px, -10px);
+    background-color: #e84545;
+    border-radius: 50%;
+}
+
+.hamburger-box {
+    width: 20px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+
+}
+
+.hamburger-inner::before {
+    top: -7px;
+}
+
+.hamburger-inner::after {
+    top: 7px;
+}
+
+
+
+
+section.banner {
+    min-height: 750px;
+    background-image: url(images/banner.jpg);
+}
+
+div.welcome {
+    position: absolute;
+    width: 80%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    color: white;
+
+}
+
+div.welcome h1 {
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+div.welcome p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+div.welcome button {
+    margin-top: 90px;
+    height: 45px;
+    width: 180px;
+    background-color: #e84545;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+/* .member span {
+    display: inline-block;
+    border: 1px solid red;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+i {
+    font-size: 30px;
+    vertical-align: middle;
+} */
