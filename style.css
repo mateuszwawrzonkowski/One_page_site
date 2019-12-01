@@ -177,11 +177,64 @@ section.projects {
     align-items: center;
     line-height: 0;
     justify-content: center;
+    overflow: hidden;
 }
 
+.projects div {
+    position: relative;
+    overflow: hidden;
+}
 
+.projects .overlay {
+    position: absolute;
+    background: rgba(232, 69, 69, 0.9);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.3s;
+}
 
+.projects .overlay-caption {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(0, -50%);
+    transition: 0.3s;
+    overflow: visible;
+    opacity: 0;
+    font-family: sans-serif;
+    color: white;
+}
 
+.projects h5 {
+    text-transform: uppercase;
+    margin-bottom: 100px;
+    transition: 0.4s;
+}
+
+.projects h5 {
+    font-size: 1rem;
+}
+
+.projects img {
+    transition: 0.3s;
+}
+
+.projects a:hover img {
+    transform: scale(1.2);
+}
+
+.projects a:hover .overlay,
+.projects a:hover .overlay-caption {
+    opacity: 1;
+}
+
+.projects a:hover h5 {
+    margin-bottom: 25px;
+}
 
 /* #endregion */
 
