@@ -16,10 +16,7 @@ header.navbar {
     width: 100vw;
     background-color: transparent;
     transition: 0.2s;
-}
-
-header div.active {
-    padding: 20px 0 20px 0;
+    z-index: 1;
 }
 
 header div.header-content {
@@ -199,7 +196,7 @@ section.features .feature p {
 /* #region projects */
 section.projects {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: wrap;
     align-items: center;
     line-height: 0;
     justify-content: center;
@@ -209,6 +206,7 @@ section.projects {
 .projects div {
     position: relative;
     overflow: hidden;
+    flex-basis: 100%;
 }
 
 .projects .overlay {
