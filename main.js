@@ -1,12 +1,11 @@
 const navbar = document.querySelector('.navbar');
 const headerContent = document.querySelector('.header-content');
+const menuButton = document.querySelector('.hamburger');
+const navigation = document.querySelector('.menu');
 
-const changeMenu = () => {
+const scrollHeader = () => {
     const scrollValue = window.scrollY;
     const navbarHeight = document.querySelector('.navbar').scrollHeight;
-    console.log(`scroll value ${scrollValue}`);
-    console.log(`smavbar Height ${navbarHeight}`);
-
     if (scrollValue >= (navbarHeight / 2)) {
         navbar.classList.add('active');
         headerContent.classList.add('active');
@@ -16,4 +15,11 @@ const changeMenu = () => {
     }
 }
 
-window.addEventListener('scroll', changeMenu);
+const openMenu = () => {
+    navigation.classList.toggle('active');
+    menuButton.classList.toggle('active');
+}
+
+
+window.addEventListener('scroll', scrollHeader);
+menuButton.addEventListener('click', openMenu)

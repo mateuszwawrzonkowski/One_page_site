@@ -19,6 +19,10 @@ header.navbar {
     z-index: 1;
 }
 
+header.navbar.active {
+    background-color: #292c47;
+}
+
 header div.header-content {
     position: relative;
     width: 85vw;
@@ -27,10 +31,6 @@ header div.header-content {
     margin-left: auto;
     margin-right: auto;
     transition: 0.2s;
-}
-
-header.navbar.active {
-    background-color: #292c47;
 }
 
 header div.header-content.active {
@@ -44,6 +44,43 @@ header div.header-content img {
     transform: translateY(-50%);
 }
 
+header .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+header .menu.active {
+    opacity: 0.9;
+    visibility: visible;
+}
+
+header .menu a {
+    font-family: "Raleway", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 60px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+}
+
+header .menu a:hover {
+    color: white;
+}
+
 .hamburger {
     position: absolute;
     top: 50%;
@@ -55,6 +92,7 @@ header div.header-content img {
     background-color: transparent;
     border: 0;
     outline: none;
+    z-index: 1;
 }
 
 .hamburger::before {
@@ -92,7 +130,7 @@ header div.header-content img {
     background-color: white;
     position: absolute;
     left: 0;
-
+    transition: 0.3s;
 }
 
 .hamburger-inner::before {
@@ -102,6 +140,19 @@ header div.header-content img {
 .hamburger-inner::after {
     top: 7px;
 }
+
+.hamburger.active .hamburger-inner {
+    background-color: transparent;
+}
+
+.hamburger.active .hamburger-inner:before {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-inner:after {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 
 /*#endregion*/
 
@@ -146,6 +197,7 @@ section.banner {
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
+    outline: none;
 }
 
 .banner button:hover {
@@ -389,14 +441,15 @@ section.projects {
 
 .testimonials .dots {
     margin-bottom: 25px;
+    margin: 25 auto;
 }
 
 .testimonials .dots span {
     display: inline-block;
     background-color: rgba(255, 255, 255, 0.2);
-    width: 10px;
-    height: 10px;
-    margin: 0 6px;
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -410,7 +463,12 @@ section.projects {
 
 /* #region download */
 .download .container {
-    margin: 100px 25px 90px 25px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 380px;
+    width: 100vw;
     text-align: center;
 }
 
