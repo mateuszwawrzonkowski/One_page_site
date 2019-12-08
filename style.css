@@ -42,6 +42,7 @@ header div.header-content img {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
 }
 
 header .menu {
@@ -158,14 +159,15 @@ header .menu a:hover {
 
 /*#region banner */
 section.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 750px;
     background-image: url(images/banner.jpg);
 }
 
 .banner div.welcome {
-    width: 85%;
-    padding-top: 50%;
-    margin: 0 auto;
+    max-width: 81%;
     text-align: center;
     color: white;
 }
@@ -175,7 +177,8 @@ section.banner {
     text-transform: uppercase;
     font-family: sans-serif;
     font-size: 32px;
-    margin-bottom: 10px;
+    margin-top: 60px;
+    margin-bottom: 15px;
 }
 
 .banner p {
@@ -208,11 +211,12 @@ section.banner {
 /* #endregion */
 
 /* #region features section */
+
 section.features {
     display: flex;
+    flex-wrap: wrap;
     padding-top: 100px;
     padding-bottom: 50px;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -596,6 +600,140 @@ footer {
     background-color: #313454;
     color: rgba(255, 255, 255, 0.5);
     padding: 35px;
+}
+
+/* #endregion */
+
+/* #region media quaries  */
+
+/* For devices with width between 481px and 768px, like larger phones and portrait tablets */
+@media only screen and (min-width: 481px) {
+    .banner div.welcome {
+        width: 85%;
+    }
+
+    .banner h1 {
+        font-size: 42px;
+    }
+}
+
+/* For devices with width between 769px and 1279px, like landscape tablets and laptops */
+@media only screen and (min-width: 768px) {
+    .banner h1 {
+        font-size: 65px;
+    }
+
+    section.features .feature {
+        flex-basis: 50%;
+    }
+
+    section.features .feature p {
+        padding: 0 30px;
+    }
+
+    .projects div {
+        flex-basis: 50%;
+    }
+}
+
+@media only screen and (min-width: 990px) {
+    .banner div.welcome {
+        max-width: 960px;
+
+    }
+
+    section.features .feature {
+        flex-basis: 33%;
+    }
+
+    section.features .feature p {
+        padding: 0 45px;
+    }
+
+    .testimonials div {
+        flex-basis: 50%;
+    }
+
+    .testimonials p {
+        margin-bottom: 45px;
+    }
+
+}
+
+/* For devices with width of 1280px and more, like desktop computers */
+@media only screen and (min-width: 1024px) {
+    header div.header-content {
+        width: 95vw;
+
+    }
+
+    header .menu {
+        display: flex;
+        flex-flow: row;
+        position: absolute;
+        top: 50%;
+        left: 40vw;
+        transform: translateY(-50%);
+        height: 50%;
+        width: 60%;
+        visibility: visible;
+        opacity: 1;
+        transition: 0s;
+        background-color: transparent;
+    }
+
+    header .menu a {
+        font-family: "Raleway", sans-serif;
+        font-size: 13px;
+        margin-left: 40px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    header div.header-content {
+        max-width: 1170px;
+    }
+
+    header .menu {
+        left: 45%;
+    }
+
+    section.features {
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+
+    .team {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .team .member {
+        margin: 0 10px;
+        flex-basis: 20%;
+    }
+
+    .projects div {
+        flex-basis: 25%;
+    }
+
+    .testimonials {
+        align-items: center;
+    }
+
+    .testimonials .text {
+        padding: 0 100px;
+    }
+
+    .testimonials .text h1 {
+        font-size: 36px;
+    }
 }
 
 /* #endregion */

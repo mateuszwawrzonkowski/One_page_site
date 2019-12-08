@@ -5,3 +5,9 @@ $('nav a').on('click', function () {
         scrollTop: $(goToSection).offset().top - navbarHeight,
     })
 })
+
+$('.header-content img').on('click', function () {
+    $('body, html').animate({
+        scrollTop: 0,
+    })
+})
