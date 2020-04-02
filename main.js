@@ -6,15 +6,15 @@ const navigationMenuButton = document.querySelectorAll('.menu a');
 
 //Testimonials slider
 const slideList = [{
-        img: "images/testimonial-1.jpg",
-        text: "Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur....",
-        titleText: "Susan Sims, interaction designer at xyz"
-    },
-    {
-        img: "images/testimonial-2.jpg",
-        text: "Aamet consectetur adipisicing elit. Veritatis molestias, tenetur, quos voluptates provident, sint est ea voluptas....",
-        titleText: "Jesica Melgibson, frontend developer at zyx"
-    }
+    img: "images/testimonial-1.jpg",
+    text: "Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Aenean lacinia bibendum nulla...",
+    titleText: "Susan Sims, interaction designer at xyz"
+},
+{
+    img: "images/testimonial-2.jpg",
+    text: "Aamet consectetur adipisicing elit. Veritatis molestias, tenetur, quos voluptates provident, sint est ea...",
+    titleText: "Jesica Melgibson, frontend developer at zyx"
+}
 ];
 
 const image = document.querySelector('img.slider');
@@ -23,7 +23,7 @@ const title = document.querySelector('p.title');
 const dots = [...document.querySelectorAll('.dots span.dot')];
 
 //Interface
-const time = 5000;
+const time = 3000;
 let active = 0;
 
 const changeSlide = () => {
@@ -36,15 +36,30 @@ const changeSlide = () => {
     title.textContent = slideList[active].titleText;
     changeDot();
 }
-
+//Change dot on interval
 const changeDot = () => {
     const activeDot = dots.findIndex(dot => dot.classList.contains('active'));
     dots[activeDot].classList.remove('active');
     dots[active].classList.add('active');
 }
 
-setInterval(changeSlide, time);
+let dotInterval = setInterval(changeSlide, time);
 
+//Change dot on click
+dots.forEach(dot => dot.addEventListener('click', function () {
+    if (!dot.classList.contains('active')) {
+        const activeDot = dots.findIndex(dot => dot.classList.contains('active'));
+        dots[activeDot].classList.remove('active');
+        dot.classList.add('active');
+        changeSlide();
+    }
+    clearInterval(dotInterval);
+    dotInterval = setInterval(changeSlide, time);
+}))
+
+const changeDotOnClick = () => {
+
+}
 
 //Project section - Lightbox gallery 
 
